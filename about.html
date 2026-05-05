@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Bake It Baby - Not Your Grandma's Bakery</title>
+    <meta name="description" content="Meet the Gen Z team behind the most aesthetic bakery in town. Sustainability, high taste, and no waste.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-section {
+            padding: 10% 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 50px;
+            box-shadow: 20px 20px 0 var(--secondary);
+        }
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loader" id="loader">
+        <h2>ORIGIN...</h2>
+    </div>
+
+    <div class="music-player">
+        <button id="play-pause">▶</button>
+        <span>Bakery Beats — Lo-fi</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo">BAKE IT BABY</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html" class="active">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="order.html">Order</a>
+            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 0 10px;">🌙</button>
+        </div>
+    </nav>
+
+    <section class="about-section" style="padding-top: 180px;">
+        <div class="about-content reveal">
+            <h1>Not Your <br> Grandma's Bakery.</h1>
+            <p style="font-size: 1.2rem; margin: 2rem 0;">Bake It Baby was born out of a desire for pastries that look as good as they taste. We're a team of Gen Z bakers who believe that aesthetic is just as important as the recipe.</p>
+            <p>We source only the best ingredients, prioritize sustainability, and make sure every single item that leaves our kitchen is "main character" worthy.</p>
+        </div>
+        <div class="about-image reveal">
+            <img src="bakery_vibe_1776934859373.png" alt="Our Vibe">
+        </div>
+    </section>
+
+    <section style="background: var(--primary); color: white; padding: 10% 10%; text-align: center;">
+        <h2 style="font-size: 4rem; margin-bottom: 2rem;">"High Taste, <br> No Waste."</h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem;">We're committed to zero-plastic packaging and supporting local farmers. Because being sweet shouldn't cost the earth.</p>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">BAKE IT BABY</div>
+                <p>Stay sweet, stay cool.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <p><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></p>
+                <p><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></p>
+                <p><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Instagram / TikTok / Pinterest</p>
+            </div>
+        </div>
+        <p style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Bake It Baby. All rights reserved. Built for the culture.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Crumbs Everywhere</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+        .error-code {
+            font-size: 10rem;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <h2>OOPS...</h2>
+    </div>
+
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2>Crumbs Everywhere!</h2>
+        <p style="margin: 2rem 0; font-size: 1.2rem;">Looks like this page got eaten. Don't worry, the fresh ones are on the home page.</p>
+        <a href="index.html" class="btn">Take Me Home</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

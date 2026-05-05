@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake It Baby | The Aesthetic Bakery</title>
+    <meta name="description" content="Slay your cravings at Bake It Baby. Handcrafted pastries, aesthetic vibes, and the best lo-fi beats in town.">
+    <meta name="keywords" content="bakery, aesthetic, gen z, pastries, croissants, cupcakes, lo-fi bakery">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bakeitbaby.com/">
+    <meta property="og:title" content="Bake It Baby | The Aesthetic Bakery">
+    <meta property="og:description" content="Slay your cravings at Bake It Baby. Handcrafted pastries, aesthetic vibes, and the best lo-fi beats in town.">
+    <meta property="og:image" content="bakery_hero_1776934825336.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bake It Baby | The Aesthetic Bakery">
+    <meta property="twitter:description" content="Slay your cravings at Bake It Baby. Handcrafted pastries, aesthetic vibes, and the best lo-fi beats in town.">
+    <meta property="twitter:image" content="bakery_hero_1776934825336.png">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loader" id="loader">
+        <h2>BAKING...</h2>
+    </div>
+
+    <div class="music-player">
+        <button id="play-pause">▶</button>
+        <span>Bakery Beats — Lo-fi</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo">BAKE IT BABY</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="order.html">Order</a>
+            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 0 10px;">🌙</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Slay Your <br> Cravings.</h1>
+            <p>The aesthetic bakery your feed deserves. Handcrafted pastries with a major vibe. Baked fresh, serving looks.</p>
+            <a href="menu.html" class="btn">View Menu</a>
+        </div>
+        <div class="hero-image-container" style="position: absolute; right: -10%; top: 20%; width: 50%; z-index: -1; opacity: 0.8;">
+            <img src="bakery_hero_1776934825336.png" alt="Bake it Baby Interior" style="width: 100%; border-radius: 40px; transform: rotate(-5deg);" loading="lazy">
+        </div>
+    </section>
+
+    <section class="grid reveal">
+        <div class="card">
+            <img src="aesthetic_pastries_1776934841310.png" alt="Aesthetic Croissant" style="width: 100%; border-radius: 15px; margin-bottom: 1rem;" loading="lazy">
+            <h3>Cloud Croissants</h3>
+            <p>Flakier than your last date. Buttered to perfection.</p>
+        </div>
+        <div class="card">
+            <img src="bakery_vibe_1776934859373.png" alt="Bakery Vibe" style="width: 100%; border-radius: 15px; margin-bottom: 1rem;" loading="lazy">
+            <h3>Matcha Moments</h3>
+            <p>Earthy, sweet, and totally Instagrammable.</p>
+        </div>
+        <div class="card">
+            <img src="aesthetic_pastries_1776934841310.png" alt="Cupcakes" style="width: 100%; border-radius: 15px; margin-bottom: 1rem;" loading="lazy">
+            <h3>Main Character Muffins</h3>
+            <p>Because you deserve to be the center of attention.</p>
+        </div>
+    </section>
+
+    <section style="padding: 10% 5%; background: var(--secondary); text-align: center;">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">"Baking is a whole mood."</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.5rem;">We don't just bake; we create moments. Every pastry is a vibe, every bite is an experience. Join the baby squad.</p>
+    </section>
+
+    <section class="social-feed reveal">
+        <h2>Join the Squad</h2>
+        <p>Tag us @bakeitbaby_official to get featured.</p>
+        <div class="feed-grid">
+            <div class="feed-item"><img src="aesthetic_pastries_1776934841310.png" alt="Social 1"></div>
+            <div class="feed-item"><img src="bakery_vibe_1776934859373.png" alt="Social 2"></div>
+            <div class="feed-item"><img src="bakery_hero_1776934825336.png" alt="Social 3"></div>
+            <div class="feed-item"><img src="cookie_box_aesthetic_1776935087110.png" alt="Social 4"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">BAKE IT BABY</div>
+                <p>Stay sweet, stay cool.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <p><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></p>
+                <p><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></p>
+                <p><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Instagram / TikTok / Pinterest</p>
+            </div>
+        </div>
+        <p style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Bake It Baby. All rights reserved. Built for the culture.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

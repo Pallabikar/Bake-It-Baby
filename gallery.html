@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Bake It Baby - Aesthetic Vibe Check</title>
+    <meta name="description" content="Scroll through our 3D gallery of aesthetic pastries and bakery vibes. Main character energy only.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-container {
+            padding-top: 150px;
+            text-align: center;
+            background: #111; /* Dark mode for gallery to make 3D pop */
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .gallery-container h1 {
+            color: var(--secondary);
+            margin-bottom: 3rem;
+        }
+        .scroller-3d-wrap {
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 2000px;
+        }
+        .scroller-3d {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+        }
+        .scroller-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            backface-visibility: hidden;
+        }
+        .scroller-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        .scroller-item:hover img {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loader" id="loader" style="background: #111;">
+        <h2>CURATING...</h2>
+    </div>
+
+    <div class="music-player" style="background: rgba(0,0,0,0.5); color: white;">
+        <button id="play-pause">▶</button>
+        <span>Bakery Beats — Lo-fi</span>
+    </div>
+
+    <nav style="background: rgba(0,0,0,0.8); color: white;">
+        <a href="index.html" class="logo" style="color: var(--secondary);">BAKE IT BABY</a>
+        <div class="nav-links">
+            <a href="index.html" style="color: white;">Home</a>
+            <a href="menu.html" style="color: white;">Menu</a>
+            <a href="about.html" style="color: white;">About</a>
+            <a href="gallery.html" class="active" style="color: white;">Gallery</a>
+            <a href="contact.html" style="color: white;">Contact</a>
+            <a href="order.html" style="color: white;">Order</a>
+            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 0 10px;">🌙</button>
+        </div>
+    </nav>
+
+    <div class="gallery-container">
+        <h1>Gallery</h1>
+        <p>Scroll or drag to explore the vibe.</p>
+        
+        <div class="scroller-3d-wrap">
+            <div class="scroller-3d" id="scroller">
+                <!-- Items will be rotated in 3D circle -->
+                <div class="scroller-item" style="--ry: 0deg; transform: rotateY(var(--ry)) translateZ(400px);">
+                    <img src="bakery_hero_1776934825336.png" alt="Gallery 1">
+                </div>
+                <div class="scroller-item" style="--ry: 60deg; transform: rotateY(var(--ry)) translateZ(400px);">
+                    <img src="aesthetic_pastries_1776934841310.png" alt="Gallery 2">
+                </div>
+                <div class="scroller-item" style="--ry: 120deg; transform: rotateY(var(--ry)) translateZ(400px);">
+                    <img src="bakery_vibe_1776934859373.png" alt="Gallery 3">
+                </div>
+                <div class="scroller-item" style="--ry: 180deg; transform: rotateY(var(--ry)) translateZ(400px);">
+                    <img src="cookie_box_aesthetic_1776935087110.png" alt="Gallery 4">
+                </div>
+                <div class="scroller-item" style="--ry: 240deg; transform: rotateY(var(--ry)) translateZ(400px);">
+                    <img src="aesthetic_pastries_1776934841310.png" alt="Gallery 5">
+                </div>
+                <div class="scroller-item" style="--ry: 300deg; transform: rotateY(var(--ry)) translateZ(400px);">
+                    <img src="bakery_vibe_1776934859373.png" alt="Gallery 6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #000;">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">BAKE IT BABY</div>
+                <p>Stay sweet, stay cool.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <p><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></p>
+                <p><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></p>
+                <p><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Instagram / TikTok / Pinterest</p>
+            </div>
+        </div>
+        <p style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Bake It Baby. All rights reserved. Built for the culture.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // 3D Scroller Interaction
+        const scroller = document.getElementById('scroller');
+        let rotation = 0;
+        
+        window.addEventListener('wheel', (e) => {
+            rotation -= e.deltaY * 0.1;
+            scroller.style.transform = `rotateY(${rotation}deg)`;
+        });
+
+        // Touch support
+        let startX = 0;
+        window.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+        window.addEventListener('touchmove', (e) => {
+            const diff = e.touches[0].clientX - startX;
+            rotation += diff * 0.5;
+            scroller.style.transform = `rotateY(${rotation}deg)`;
+            startX = e.touches[0].clientX;
+        });
+    </script>
+</body>
+</html>

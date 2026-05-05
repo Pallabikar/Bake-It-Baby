@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bake It Baby - Let's Link Up</title>
+    <meta name="description" content="Got a question or a collab idea? Link up with the Bake It Baby squad today.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-section {
+            padding: 150px 10% 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        input, textarea {
+            padding: 1rem;
+            border-radius: 15px;
+            border: 2px solid var(--secondary);
+            background: transparent;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+        }
+        .info-card {
+            background: var(--secondary);
+            padding: 3rem;
+            border-radius: 30px;
+        }
+        .info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loader" id="loader">
+        <h2>CONNECTING...</h2>
+    </div>
+
+    <div class="music-player">
+        <button id="play-pause">▶</button>
+        <span>Bakery Beats — Lo-fi</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo">BAKE IT BABY</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="order.html">Order</a>
+            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 0 10px;">🌙</button>
+        </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="reveal">
+            <h1>Let's Link Up.</h1>
+            <p style="margin-bottom: 2rem;">Got a question, a collab idea, or just want to say hey? Drop us a message below.</p>
+            <div id="form-success" class="form-success">
+                <p>MESSAGE SENT! 💌 We'll hit you up soon.</p>
+            </div>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">Send Vibe</button>
+            </form>
+        </div>
+        <div class="info-card reveal">
+            <h3>Find Us</h3>
+            <p>123 Aesthetic Ave,<br>Trendytown, NY 10001</p>
+            
+            <h3 style="margin-top: 2rem;">Hours</h3>
+            <p>Mon - Fri: 8am - 6pm<br>Sat - Sun: 9am - 8pm</p>
+            
+            <h3 style="margin-top: 2rem;">Socials</h3>
+            <p>@bakeitbaby_official</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">BAKE IT BABY</div>
+                <p>Stay sweet, stay cool.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <p><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></p>
+                <p><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></p>
+                <p><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Instagram / TikTok / Pinterest</p>
+            </div>
+        </div>
+        <p style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Bake It Baby. All rights reserved. Built for the culture.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

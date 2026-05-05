@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Bake It Baby - Sweet & Savory Treats</title>
+    <meta name="description" content="Explore our menu of handcrafted croissants, muffins, and lo-fi coffee. Baked fresh for the baby squad.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-hero {
+            padding-top: 150px;
+            text-align: center;
+        }
+        .menu-category {
+            padding: 5% 10%;
+        }
+        .menu-category h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-bottom: 4px solid var(--secondary);
+            display: inline-block;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .menu-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+        .menu-item p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        .price {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loader" id="loader">
+        <h2>PREPARING...</h2>
+    </div>
+
+    <div class="music-player">
+        <button id="play-pause">▶</button>
+        <span>Bakery Beats — Lo-fi</span>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo">BAKE IT BABY</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="order.html">Order</a>
+            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; padding: 0 10px;">🌙</button>
+        </div>
+    </nav>
+
+    <div class="menu-hero">
+        <h1>Our Menu</h1>
+        <p>Sweet, savory, and everything in between.</p>
+    </div>
+
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="sweet">Sweet</button>
+        <button class="filter-btn" data-filter="savory">Savory</button>
+        <button class="filter-btn" data-filter="cakes">Cakes</button>
+        <button class="filter-btn" data-filter="sips">Sips</button>
+        <button class="filter-btn" id="open-filters" style="display: flex; align-items: center; gap: 0.5rem; background: var(--secondary); color: white; border: none;">
+            <span>⚡ More Filters</span>
+        </button>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal-overlay" id="filter-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Filters</h3>
+                <button id="close-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-sidebar">
+                    <div class="modal-tab active" data-tab="sort">Sort by</div>
+                    <div class="modal-tab" data-tab="cuisines">Types</div>
+                    <div class="modal-tab" data-tab="rating">Rating</div>
+                    <div class="modal-tab" data-tab="cost">Cost</div>
+                </div>
+                <div class="modal-content">
+                    <div id="tab-sort" class="tab-pane">
+                        <label style="display: block; margin-bottom: 1rem;"><input type="radio" name="sort" checked> Popularity</label>
+                        <label style="display: block; margin-bottom: 1rem;"><input type="radio" name="sort"> Rating: High to Low</label>
+                        <label style="display: block; margin-bottom: 1rem;"><input type="radio" name="sort"> Cost: Low to High</label>
+                    </div>
+                    <div id="tab-cuisines" class="tab-pane" style="display: none;">
+                        <label style="display: block; margin-bottom: 1rem;"><input type="checkbox"> Pastries</label>
+                        <label style="display: block; margin-bottom: 1rem;"><input type="checkbox"> Cakes</label>
+                        <label style="display: block; margin-bottom: 1rem;"><input type="checkbox"> Coffee</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="filter-btn" id="clear-all" style="padding: 0.5rem 1rem;">Clear all</button>
+                <button class="btn" id="apply-filters" style="padding: 0.5rem 1.5rem; border: none;">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="menu-category" id="menu-grid">
+        <!-- Sweet Pastries -->
+        <div class="menu-item" data-category="sweet">
+            <div>
+                <h3>Signature Almond Croissant</h3>
+                <p>Twice-baked with homemade almond cream.</p>
+            </div>
+            <div class="price">$5.50</div>
+        </div>
+        <div class="menu-item" data-category="sweet">
+            <div>
+                <h3>Strawberry Dream Muffin</h3>
+                <p>Fresh strawberries and a vanilla crumble.</p>
+            </div>
+            <div class="price">$4.25</div>
+        </div>
+        <div class="menu-item" data-category="sweet">
+            <div>
+                <h3>Matcha Glazed Scone</h3>
+                <p>Earthy matcha glaze over a buttery scone.</p>
+            </div>
+            <div class="price">$4.75</div>
+        </div>
+
+        <!-- Savory -->
+        <div class="menu-item" data-category="savory">
+            <div>
+                <h3>Everything Bagel Croissant</h3>
+                <p>Cream cheese filled with everything seasoning.</p>
+            </div>
+            <div class="price">$6.00</div>
+        </div>
+        <div class="menu-item" data-category="savory">
+            <div>
+                <h3>Spinach & Feta Quiche</h3>
+                <p>Flaky crust with organic spinach and feta.</p>
+            </div>
+            <div class="price">$7.50</div>
+        </div>
+        <div class="menu-item" data-category="savory">
+            <div>
+                <h3>Truffle Mushroom Toast</h3>
+                <p>Sourdough with wild mushrooms and truffle oil.</p>
+            </div>
+            <div class="price">$12.00</div>
+        </div>
+
+        <!-- Cakes -->
+        <div class="menu-item" data-category="cakes">
+            <div>
+                <h3>Birthday Vibe Cake</h3>
+                <p>Confetti sponge with vanilla bean buttercream.</p>
+            </div>
+            <div class="price">$8.00</div>
+        </div>
+        <div class="menu-item" data-category="cakes">
+            <div>
+                <h3>Zesty Lemon Tart</h3>
+                <p>Sharp lemon curd in a shortcrust shell.</p>
+            </div>
+            <div class="price">$6.50</div>
+        </div>
+        <div class="menu-item" data-category="cakes">
+            <div>
+                <h3>Dark Forest Slice</h3>
+                <p>Chocolate sponge, cherries, and whipped cream.</p>
+            </div>
+            <div class="price">$7.00</div>
+        </div>
+
+        <!-- Cookies -->
+        <div class="menu-item" data-category="cookies">
+            <div>
+                <h3>Salted Choco Chip</h3>
+                <p>Crispy edges, gooey center, sea salt flakes.</p>
+            </div>
+            <div class="price">$3.50</div>
+        </div>
+        <div class="menu-item" data-category="cookies">
+            <div>
+                <h3>Red Velvet Melt</h3>
+                <p>Deep red cocoa cookie with a white chocolate core.</p>
+            </div>
+            <div class="price">$4.00</div>
+        </div>
+        <div class="menu-item" data-category="cookies">
+            <div>
+                <h3>Oatmeal Gold</h3>
+                <p>Honey-toasted oats with golden raisins.</p>
+            </div>
+            <div class="price">$3.25</div>
+        </div>
+
+        <!-- Sips -->
+        <div class="menu-item" data-category="sips">
+            <div>
+                <h3>Iced Oat Milk Latte</h3>
+                <p>Triple shot with a hint of vanilla bean.</p>
+            </div>
+            <div class="price">$6.00</div>
+        </div>
+        <div class="menu-item" data-category="sips">
+            <div>
+                <h3>Rose Water Lemonade</h3>
+                <p>Refreshing, floral, and perfect for your feed.</p>
+            </div>
+            <div class="price">$4.50</div>
+        </div>
+        <div class="menu-item" data-category="sips">
+            <div>
+                <h3>Lavender London Fog</h3>
+                <p>Earl grey tea with lavender and steamed milk.</p>
+            </div>
+            <div class="price">$5.50</div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer as index.html -->
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">BAKE IT BABY</div>
+                <p>Stay sweet, stay cool.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <p><a href="menu.html" style="color: white; text-decoration: none;">Menu</a></p>
+                <p><a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a></p>
+                <p><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <p>Instagram / TikTok / Pinterest</p>
+            </div>
+        </div>
+        <p style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Bake It Baby. All rights reserved. Built for the culture.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
