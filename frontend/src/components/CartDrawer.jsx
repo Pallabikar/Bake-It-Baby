@@ -28,7 +28,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
       <div className="cart-drawer-panel">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
           <h2 className="syne-extra">Your Bag</h2>
-          <button onClick={onClose} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer' }}>&times;</button>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer' }} aria-label="Close Bag">&times;</button>
         </div>
 
         {cart.length === 0 ? (

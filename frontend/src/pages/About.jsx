@@ -54,7 +54,7 @@ const About = () => {
       {/* 3. The Beginning */}
       <section style={{ padding: '8rem 10%', background: '#FFFFFF', display: 'flex', alignItems: 'center', gap: '5rem', flexWrap: 'wrap' }}>
         <div className="about-reveal" style={{ flex: 1, minWidth: '350px' }}>
-          <img src="/bakery_hero_1776934825336.png" alt="Our Heritage" style={{ width: '100%', borderRadius: '20px', boxShadow: '0 25px 50px rgba(0,0,0,0.08)', border: '10px solid white' }} />
+          <img src="/bakery_hero_1776934825336.png" alt="Our Heritage" loading="lazy" width="600" height="400" style={{ width: '100%', borderRadius: '20px', boxShadow: '0 25px 50px rgba(0,0,0,0.08)', border: '10px solid white' }} />
         </div>
         <div className="about-reveal" style={{ flex: 1, minWidth: '350px' }}>
           <h2 style={{ fontSize: '2.8rem', color: '#9A7B4F', marginBottom: '2rem', lineHeight: '1.2' }}>Kneaded with Love</h2>
@@ -82,7 +82,7 @@ const About = () => {
           {team.map((member, i) => (
             <div key={i} className="about-reveal" style={{ background: 'white', padding: '2.5rem', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)', textAlign: 'center' }}>
               <div style={{ width: '150px', height: '150px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 1.5rem', border: '5px solid #E3F2E1' }}>
-                <img src={member.img} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={member.img} alt={member.name} loading="lazy" width="150" height="150" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <h3 style={{ fontSize: '1.5rem', color: '#9A7B4F', marginBottom: '0.5rem' }}>{member.name}</h3>
               <p style={{ color: '#F3C6CB', fontWeight: 700, textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', marginBottom: '1rem' }}>{member.role}</p>
@@ -113,7 +113,7 @@ const About = () => {
             </ul>
           </div>
           <div className="about-reveal" style={{ flex: 1, minWidth: '350px' }}>
-            <img src="/watercolor_bakery.png" alt="Digital Bakery" style={{ width: '100%', borderRadius: '20px' }} />
+            <img src="/watercolor_bakery.png" alt="Digital Bakery" loading="lazy" width="600" height="400" style={{ width: '100%', borderRadius: '20px' }} />
           </div>
         </div>
       </section>

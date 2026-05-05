@@ -65,7 +65,10 @@ const Home = () => {
               className="hero-image" 
               src={slide.img} 
               alt={slide.title} 
+              loading={index === 0 ? "eager" : "lazy"}
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+              width="1920"
+              height="1080"
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent, var(--secondary) 80%)', zIndex: 1 }}></div>
           </div>
@@ -107,7 +110,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <img src="/watercolor_bakery.png" alt="Bakery Illustration" style={{ maxWidth: '400px', width: '100%', margin: '0 auto' }} />
+        <img src="/watercolor_bakery.png" alt="Bakery Illustration" loading="lazy" width="400" height="300" style={{ maxWidth: '400px', width: '100%', margin: '0 auto' }} />
       </section>
 
       {/* 3. Our Creations Grid */}
@@ -127,7 +130,7 @@ const Home = () => {
           ].map((item, i) => (
             <Link to={`/menu?category=${item.cat}`} key={i} style={{ textDecoration: 'none', color: 'white' }}>
               <div style={{ width: '100%', aspectRatio: '1/1', borderRadius: '20px', overflow: 'hidden', border: '6px solid white', boxShadow: '0 15px 30px rgba(0,0,0,0.1)', marginBottom: '1rem', background: 'white' }}>
-                <img src={item.img} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={item.img} alt={item.name} loading="lazy" width="300" height="300" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <h3 style={{ fontSize: '1.1rem', letterSpacing: '1px', fontWeight: 700 }}>{item.name}</h3>
             </Link>
@@ -148,7 +151,7 @@ const Home = () => {
           <Link to="/menu?category=gifting" style={{ background: 'var(--secondary)', padding: '0.8rem 2.5rem', borderRadius: '50px', color: 'var(--text)', textDecoration: 'none', fontWeight: 700 }}>EXPLORE HAMPERS</Link>
         </div>
         <div style={{ flex: 1, minWidth: '300px' }}>
-          <img src="/cookie_box_aesthetic_1776935087110.png" alt="Hampers" style={{ width: '100%', borderRadius: '15px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+          <img src="/cookie_box_aesthetic_1776935087110.png" alt="Hampers" loading="lazy" width="600" height="450" style={{ width: '100%', borderRadius: '15px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
         </div>
       </section>
 
@@ -163,7 +166,7 @@ const Home = () => {
             { n: 'Matcha Sip', img: '/matcha_sip.png', d: '3000+ Sold' }
           ].map((item, i) => (
             <div key={i} style={{ textAlign: 'center', background: 'white', padding: '1.5rem', borderRadius: '20px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
-              <img src={item.img} alt={item.n} style={{ width: '100%', aspectRatio: '1/1', objectFit: 'cover', borderRadius: '15px', marginBottom: '1.5rem' }} />
+              <img src={item.img} alt={item.n} loading="lazy" width="220" height="220" style={{ width: '100%', aspectRatio: '1/1', objectFit: 'cover', borderRadius: '15px', marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.1rem', color: '#333', marginBottom: '0.5rem' }}>{item.n}</h3>
               <p style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 700 }}>⭐ {item.d}</p>
             </div>
@@ -177,7 +180,7 @@ const Home = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {['/bakery_vibe_1776934859373.png', '/matcha_sip.png', '/savory_focaccia.png', '/birthday_cake.png', '/cookie_box_aesthetic_1776935087110.png', '/bakery_hero_1776934825336.png'].map((src, i) => (
             <div key={i} style={{ aspectRatio: '1', overflow: 'hidden', borderRadius: '15px' }}>
-              <img src={src} alt="Social Feed" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={src} alt="Social Feed" loading="lazy" width="200" height="200" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           ))}
         </div>

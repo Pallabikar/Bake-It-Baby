@@ -73,7 +73,7 @@ const Navbar = () => {
       </div>
       
       {/* Main Navigation */}
-      <nav style={{ 
+      <nav role="navigation" style={{ 
         background: 'white', 
         display: 'flex', 
         alignItems: 'stretch', 
@@ -172,6 +172,7 @@ const Navbar = () => {
                 localStorage.setItem('theme', next);
               }}
               style={{ ...pillStyle, width: '40px', padding: '0.4rem', justifyContent: 'center' }}
+              aria-label="Change Color Theme"
             >
               🎨
             </button>
@@ -190,10 +191,11 @@ const Navbar = () => {
 
         {/* Mobile Hamburger Icon */}
         <div className="mobile-nav-toggle" style={{ alignItems: 'center', gap: '1.5rem' }}>
-          <button onClick={() => setIsCartOpen(true)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', color: 'var(--accent)', cursor: 'pointer' }}>🛒</button>
+          <button onClick={() => setIsCartOpen(true)} style={{ background: 'none', border: 'none', fontSize: '1.5rem', color: 'var(--accent)', cursor: 'pointer' }} aria-label="Open Shopping Bag">🛒</button>
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
             style={{ background: 'none', border: 'none', fontSize: '2rem', color: 'var(--accent)', cursor: 'pointer' }}
+            aria-label={isMobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
           >
             {isMobileMenuOpen ? '✕' : '☰'}
           </button>

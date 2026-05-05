@@ -2,18 +2,20 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Menu from './pages/Menu';
-import About from './pages/About';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
-import Order from './pages/Order';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Admin from './pages/Admin';
-import Profile from './pages/Profile';
-import Success from './pages/Success';
-import Cancel from './pages/Cancel';
+
+// Lazy load pages for better performance
+const Home = React.lazy(() => import('./pages/Home'));
+const Menu = React.lazy(() => import('./pages/Menu'));
+const About = React.lazy(() => import('./pages/About'));
+const Gallery = React.lazy(() => import('./pages/Gallery'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const Order = React.lazy(() => import('./pages/Order'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Signup = React.lazy(() => import('./pages/Signup'));
+const Admin = React.lazy(() => import('./pages/Admin'));
+const Profile = React.lazy(() => import('./pages/Profile'));
+const Success = React.lazy(() => import('./pages/Success'));
+const Cancel = React.lazy(() => import('./pages/Cancel'));
 import gsap from 'gsap';
 
 const AnimatedRoutes = () => {
@@ -46,20 +48,22 @@ const AnimatedRoutes = () => {
         background: 'var(--primary)', zIndex: 9999, transform: 'scaleY(0)' 
       }}></div>
       <main style={{ minHeight: '80vh' }}>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/order/success" element={<Success />} />
-          <Route path="/order/cancel" element={<Cancel />} />
-        </Routes>
+        <React.Suspense fallback={<div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'white' }}>...</div>}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/order" element={<Order />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/order/success" element={<Success />} />
+            <Route path="/order/cancel" element={<Cancel />} />
+          </Routes>
+        </React.Suspense>
       </main>
     </>
   );
@@ -127,6 +131,7 @@ function App() {
         <button 
           className="music-player-btn"
           onClick={togglePlay}
+          aria-label={isPlaying ? "Pause Music" : "Play Music"}
         >
           {isPlaying ? '⏸' : '▶'}
         </button>

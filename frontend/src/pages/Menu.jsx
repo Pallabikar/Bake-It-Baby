@@ -171,6 +171,9 @@ const Menu = () => {
                   <img 
                     src={item.image || '/aesthetic_pastries_1776934841310.png'} 
                     alt={item.name} 
+                    loading="lazy"
+                    width="280"
+                    height="250"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
                 </div>
@@ -211,7 +214,7 @@ const Menu = () => {
             <button onClick={() => setSelectedItem(null)} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'var(--secondary)', border: 'none', width: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', zIndex: 10 }}>✕</button>
             
             <div style={{ flex: 1, minWidth: '400px', height: '500px' }}>
-              <img src={selectedItem.image || '/aesthetic_pastries_1776934841310.png'} alt={selectedItem.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={selectedItem.image || '/aesthetic_pastries_1776934841310.png'} alt={selectedItem.name} loading="lazy" width="500" height="500" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
             
             <div style={{ flex: 1, minWidth: '400px', padding: '3rem', overflowY: 'auto' }}>

@@ -68,7 +68,7 @@ const Gallery = () => {
                 }}
               >
                 <div style={{ width: '100%', height: '75%', overflow: 'hidden' }}>
-                  <img src={item.src} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={item.src} alt={item.title} loading="lazy" width="350" height="360" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '1.5rem', textAlign: 'center' }}>
                   <h3 style={{ fontSize: '1.2rem', color: 'var(--accent)', marginBottom: '0.5rem' }}>{item.title}</h3>
